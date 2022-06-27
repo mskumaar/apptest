@@ -7,7 +7,6 @@ import { ToastrService } from 'ngx-toastr';
 import { JSDocComment } from '@angular/compiler';
 import { JsonPipe } from '@angular/common';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -57,7 +56,7 @@ export class AppComponent  implements OnInit  {
       editable:true
           };
   }
-
+//column headers for grid  and action column for edit/delete icons
 columnDefs = [
   {headerName: 'Id', field: 'id', width: 55,suppressSizeToFit: false,cellClass :'gridText'},
   {headerName: 'Name', field: 'name',width: 150,cellClass :'gridText'},
@@ -84,11 +83,9 @@ columnDefs = [
 
 onEditButtonClick(params:any)
 {
- alert('edit clicked');
 }
 
 actionCellRenderer(params:any) {
-  debugger;
   let eGui = document.createElement("div");
 
   let editingCells = params.api.getEditingCells();
@@ -96,12 +93,11 @@ actionCellRenderer(params:any) {
   let isCurrentRowEditing = editingCells.some((cell:any) => {
     return cell.rowIndex === params.node.rowIndex;
   });
-
+//dein
          eGui.innerHTML = `
       <img src="assets/img/pre-edit.png" height="30" data-action="edit"> &nbsp;&nbsp;
       <img src="assets/img/delete-32.png" height="30" data-action="delete"> 
      `;
-
 
 
   return eGui;
@@ -147,7 +143,6 @@ confirmDelete()
 {
 //start of delete api call
 this.service.deleteProduct(this.delCurRec.id,this.delCurRec.item).subscribe(response => {  
-  // this.toastr.success("success", data);
   response =JSON.parse(response);
   if(response[0].status=="success")
   {
@@ -161,7 +156,6 @@ this.service.deleteProduct(this.delCurRec.id,this.delCurRec.item).subscribe(resp
     this.closePopupDel(); 
     this.ngOnInit();  
   }
-  // this.api.refreshRows(null);  
 }); 
 }
 onRowEditingStarted(params:any) {
@@ -225,7 +219,6 @@ onGridReady(params:any)
     .then(rowData => this.rowData = rowData);
     this.service.getProducts()
       .subscribe((response: any) => {
-      //  console.log("in service"+response);
         this.respContent = response;
         this.products = response;
         return response;
