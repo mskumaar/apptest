@@ -1,0 +1,159 @@
+<!-- header image-->
+<div style="background-image:url('assets/img/our-products.png');height:285px;background-repeat:no-repeat;background-position: center;background-size: cover;">
+</div>
+
+<!-- Start of Add Product modal window -->
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{'display':addDivDisplayStyle}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Add Product</h4>
+      </div>
+      <div class="modal-body">
+        <p>Enter Product Details below.</p>
+        <div class="prdSection" > <img src="assets/img/arrow-32-16.png" style="margin-bottom:2px;"> Product Details</div>
+
+         
+         <div>
+          <span class="poplabel">ID:</span> <input type="number" #productId placeholder="Product ID" [(ngModel)]="addIdVal" class="txtClsSmall"> <br /> 
+          <span class="poplabel">Name:</span> <input type="text" #productName  placeholder="Product Name"  [(ngModel)]="addNameVal" class="txtClsBig" onkeypress="return RestrictCommaSemicolon(event);"
+          ondrop="return false;" onpaste="return false;"><br />
+          <span class="poplabel">SKU:</span> <input type="text" #itemVal placeholder="Item"  [(ngModel)]="addItemVal" class="txtClsSmall">
+         </div>
+
+        
+        <div class="prdSection" > <img src="assets/img/arrow-32-16.png" style="margin-bottom:2px;"> Amount & Quantity Details</div> 
+        <div>
+          <span class="poplabel">Amount:</span>  <input type="number" #amtVal placeholder="Amount"  [(ngModel)]="addAmtVal" class="txtClsSmall"><br />
+          <span class="poplabel">Quantity:</span><input type="number" #qtyVal placeholder="Quantity"  [(ngModel)]="addQtyVal" class="txtClsSmall">	
+
+        </div>
+        <div class="prdSection" > <img src="assets/img/arrow-32-16.png" style="margin-bottom:2px;">  Location Details</div> 
+		<div>
+      <span class="poplabel">State:</span>	<input type="text" #stateNm placeholder="State"  [(ngModel)]="addStateVal" class="txtClsSmall" onkeypress="return RestrictCommaSemicolon(event);"
+      ondrop="return false;" onpaste="return false;"><br />
+      <span class="poplabel">Zip:</span> <input type="text" #zip placeholder="Zip"  [(ngModel)]="addZipVal" class="txtClsSmall" onkeypress="return RestrictCommaSemicolon(event);"
+      ondrop="return false;" onpaste="return false;">
+  </div>
+
+		<button (click)="saveProduct()" class="btn btn-primary">Save </button> &nbsp; &nbsp;
+    <button (click)="closePopup()" class="btn btn-danger">Cancel </button>
+      </div>
+     
+    </div>
+  </div>
+</div>
+<!-- End of Add Product modal window -->
+<!-- Start of Update Product modal window -->
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog" role="document">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Update Product</h4>
+      </div>
+      <div class="modal-body">
+        <p>Change Product Details below.</p>
+        <div class="prdSection" > <img src="assets/img/arrow-32-16.png" style="margin-bottom:2px;"> Product Details</div>
+
+         
+         <div>
+         <span class="poplabel">ID:</span>  <input type="number" #updproductId placeholder="Product ID" [(ngModel)]="curIdVal" class="txtClsSmall"> <br /> 
+         <span class="poplabel">Name:</span>  <input type="text" #updproductName  placeholder="Product Name"  [(ngModel)]="curNameVal" class="txtClsBig" onkeypress="return RestrictCommaSemicolon(event);"
+         ondrop="return false;" onpaste="return false;"><br />
+         <span class="poplabel">SKU:</span>  <input type="text" #upditemVal placeholder="Item"  [(ngModel)]="curItemVal" class="txtClsSmall" onkeypress="return RestrictCommaSemicolon(event);"
+         ondrop="return false;" onpaste="return false;">
+         </div>
+
+        
+        <div class="prdSection" > <img src="assets/img/arrow-32-16.png" style="margin-bottom:2px;"> Cost & Quantity Details</div> 
+        <div>
+          <span class="poplabel">Amount:</span>  <input type="number" #updamtVal placeholder="Amount"  [(ngModel)]="curAmtVal" class="txtClsSmall"><br />
+          <span class="poplabel">Quantity:</span>  <input type="number" #updqtyVal placeholder="Quantity"  [(ngModel)]="curQtyVal" class="txtClsSmall">	
+
+        </div>
+        <div class="prdSection" > <img src="assets/img/arrow-32-16.png" style="margin-bottom:2px;">  Location Details</div> 
+		<div>
+      <span class="poplabel">State:</span> <input type="text" #updstateNm placeholder="State"  [(ngModel)]="curStateVal" class="txtClsSmall" onkeypress="return RestrictCommaSemicolon(event);"
+      ondrop="return false;" onpaste="return false;"><br />
+      <span class="poplabel">Zip:</span> <input type="text" #updzip placeholder="Zip"  [(ngModel)]="curZipVal" class="txtClsSmall" onkeypress="return RestrictCommaSemicolon(event);"
+      ondrop="return false;" onpaste="return false;">
+  </div>
+
+		<button (click)="updateProduct()" class="btn btn-primary">Update </button> &nbsp; &nbsp;
+    <button (click)="closePopupNew()" class="btn btn-danger">Cancel </button>
+      </div>
+     
+    </div>
+
+  </div>
+</div>
+<!-- End of Update Product modal window -->
+<!-- Start of Delete Product modal window -->
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{'display':delDivDisplayStyle}" >
+  <div class="modal-dialog" role="document" >
+    <div class="modal-content" style="height:155px">
+      <div class="modal-header" style="height:50px ;">
+        <h4 class="modal-title">Delete Product?</h4>
+      </div>
+      <div class="modal-body" style="height:20px ;">
+      Are you sure to delete this product?
+      </div>
+      <div class="modal-footer"  style="height:60px ;" >
+        
+        <button type="button" class="btn btn-danger" 
+        (click)="confirmDelete()">
+  Ok
+</button>
+<button type="button" class="btn btn-danger" 
+                (click)="closePopupDel()">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+ <!-- End of Delete Product modal window -->
+
+
+      
+<!-- Button to open Add Product Modal window -->
+ <div align="right" style="height:50px;margin-bottom:5px;"><button  (click)="openPopup()" style="border: 0;background-color: #ffffff;"> <img src="assets/img/add-icon.png">    </button></div>
+
+  
+		
+  <!-- Start of Product Grid -->
+<div align="center">
+ 
+<ag-grid-angular 
+    style="width: 98%;height: 500px;" 
+    class="ag-theme-balham"
+    (gridReady)="onGridReady($event)" 
+    [rowHeight]="50" 
+    [rowData]="rowData" 
+    [columnDefs]="columnDefs"
+		[pagination]="true"
+	[paginationPageSize]="10"
+	 [editType]="'fullRow'" 
+   (cellClicked)="onCellClicked($event)"
+   (rowEditingStopped)="onRowEditingStopped($event)"
+    (rowEditingStarted)="onRowEditingStarted($event)"
+    [suppressClickEdit]="true"
+	>
+</ag-grid-angular>
+
+</div>
+  <!-- End of Product Grid -->
+<br />

@@ -1,0 +1,104 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "ag-grid-community/dist/styles/ag-grid.css";
+@import "ag-grid-community/dist/styles/ag-theme-balham.css";
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.editable-grid-cell {
+    content: "\\f0b2";
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 15px;
+    font-weight: 900;
+   
+
+}
+#toast-container > div {
+    opacity:1;
+}
+.ag-theme-balham .ag-row
+{
+	/*background-color:#D0EAF0; 
+background-color:#ecf6f9;*/
+
+}
+.ag-row .ag-cell {
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center;
+}
+.ag-header-cell-label {
+   justify-content: center;
+   font-size: 15px !important;
+   font-weight:bold;
+}
+.gridText {
+  font-size: 15px !important;
+}
+.ag-header-row
+{
+/*	background-color:#107895;*/
+	background-color:#135BA7;
+	font-color:#FFFFFF;
+}
+.ag-header-cell-text
+{
+	color:#FFFFFF;
+}
+.modal-header
+{
+	background-color:#135BA7;
+	height:40px;
+}
+.modal-title
+{
+	color:#FFFFFF ;
+	font-size:20px;
+}
+.modal-body
+{
+background-color:#ebf0fa;
+}
+.modal-footer
+{
+	background-color:#ebf0fa;
+}
+.modal-body.input
+{
+	width:200px;
+}
+.txtClsSmall
+{
+	width:100px;
+	margin-top:10px;
+	margin-bottom:10px;
+	border-radius:0.5em;
+    border:2 px solid #135BA7;
+}
+.txtClsBig
+{
+	width:300px;
+	border-radius:0.5em;
+	border:2 px solid #135BA7;
+}
+.prdSection
+{
+	background-color: #135BA7;color:#FFFFFF;padding-left:5px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.ag-paging-panel
+{
+	font-size:15px;
+	color:#135BA7 !important;
+	font-weight:bold;
+}
+.poplabel
+{
+ width:70px;
+ margin-right:5px;
+ display: inline-block;
+}
+
