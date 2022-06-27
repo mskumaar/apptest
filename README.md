@@ -36,7 +36,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 - Install PHP with version 7.2*
 - Copy the "backend" folder 
 - Place that in "htdocs" folder 
-- now you should be able to run the php scripts using "http://localhost:<port>/backend/"
+- now you should be able to run the php scripts using "http://localhost:port/backend/"
 - Install PHPUnit 9.5.21
 - you can find the unit testing scripts in the "unittest" folder =>ApiFunctionsTest.php
 -- Go to the "unittest" folder and then run "phpunit ApiFunctionsTest.php" command and that would show the unit testing results.
