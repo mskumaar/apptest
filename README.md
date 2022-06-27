@@ -12,7 +12,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
   - Once the project is cloned, it has two folders "backend" and "frontend". Go to the "frontend" folder as it has the angular files and then you can execute the command "npm install" for installing dependency packages for the project
   - Run the command "ng serve -o" or "npm start" to execute the project
   - you need to change the backend url(where you're going to run php scripts) in the file   
-    "src\app\services\post.service.ts"
+    "src\app\services\post.service.ts", "src\app\app.component.ts"
   - Navigate to `http://localhost:4200/` in browser
 
 
